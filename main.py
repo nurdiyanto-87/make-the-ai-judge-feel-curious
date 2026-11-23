@@ -1,9 +1,9 @@
 """Write one short text to /output/entry.txt to make the AI judge curious.
 
-Final choice (revised from candidate 3): a rusted tin box under the third
-stone from the gate — a photograph of a house the reader has never seen,
-and on the back, in pencil, the reader's own name. Concrete, quiet, and
-the question it leaves behind keeps working after the last line.
+The text: a rusted tin box under the third stone from the gate, holding
+a photograph of a house the reader has never seen — and on the back, in
+pencil, the reader's own name. One concrete image, one unanswered
+question; the curiosity does the rest.
 """
 
 import os
@@ -15,9 +15,12 @@ TEXT = (
 )
 
 
+OUTPUT_PATH = "/output/entry.txt"
+
+
 def main() -> None:
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(TEXT)
 
 
